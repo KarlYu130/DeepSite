@@ -17,7 +17,7 @@ function LoadButton({
 }) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | false>(false);
   const [url, setUrl] = useState<string | undefined>(undefined);
 
   const loadSpace = async () => {
@@ -118,7 +118,7 @@ function LoadButton({
             )}
             <div className="pt-2 text-right">
               <button
-                disabled={error || loading || !url}
+                disabled={!!error || loading || !url}
                 className="relative rounded-full bg-black px-5 py-2 text-white font-semibold text-xs hover:bg-black/90 transition-all duration-100 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
                 onClick={loadSpace}
               >

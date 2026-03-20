@@ -132,7 +132,6 @@ function AskAI({
         read();
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setisAiWorking(false);
       toast.error(error.message);
